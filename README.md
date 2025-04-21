@@ -37,7 +37,7 @@ Real-Time-Sign-Language-Detection/
 │
 ├── 2. Training and Detection.ipynb  # Main notebook for training and detection
 
-## 📦 Requirements
+##  Requirements
 
 - Python 3.7+
 - TensorFlow 2.x
@@ -45,3 +45,21 @@ Real-Time-Sign-Language-Detection/
 - OpenCV
 - Protobuf
 - Pandas, lxml, matplotlib
+
+Download pre-trained model:
+Place the SSD MobileNet V2 model from TensorFlow Model Zoo into /pre-trained-models.
+Prepare dataset:
+Annotate sign images using a tool like LabelImg.
+Use generate_tfrecord.py to create .record files from annotations.
+Update pipeline.config:
+Point to correct paths for TFRecords, label map, number of classes, and checkpoint.
+Train the model:
+Train the model in the Training and Detection.ipynb
+Export the model for inference
+Run detection in the notebook or with webcam code.
+
+## Model Used
+
+SSD MobileNet V2
+Chosen for its balance between speed and accuracy
+Pre-trained on COCO dataset, then fine-tuned on sign language images
